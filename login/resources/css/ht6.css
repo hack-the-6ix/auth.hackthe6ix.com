@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap');
+:root {
+    --secondary-dark-navy: #08566B;
+}
+* {
+    box-sizing: border-box;
+}
+html {
+    height: 100%;
+    font-family: 'Open Sans';
+}
+.ht6-kc-body {
+    background: linear-gradient(180deg, #012c3800 40%, #032D39 60%), linear-gradient(90deg, #002C37 2%, #004D57 96%);
+    background-size: cover;
+    height: 100%;
+    margin: 0;
+}
+.ht6-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: unset;
+}
+.ht6-login-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.ht6-login-formcard {
+    background-color: white;
+    border-radius: 12px;
+    width: 45vw;
+    padding: 1% 10%;
+}
+#kc-page-title {
+    font-weight: 700;
+    color: var(--secondary-dark-navy);
+    font-size: 42px;
+    text-align: left;
+}
+
+/* Form stuff */
+.ht6-form-input {
+    margin-bottom: 1.5em;
+    border: 1px solid var(--secondary-dark-navy);
+    border-radius: 2px;
+    height: 2.5em;
+    width: 25em;
+    max-width: 100%;
+}
+.ht6-form-group label,.ht6-form-group input {
+    display: block;
+}
+.ht6-form-label {
+    color: var(--secondary-dark-navy);
+    font-weight: 700;
+}
+
+.ht6-button {
+    color: white;
+    padding: calc(0.5em - 1px) calc(1em - 1px);
+    letter-spacing: 0.125em;
+    border-radius: 0.125em;
+    justify-content: center;
+    display: inline-flex;
+    align-items: center;
+    appearance: none;
+    cursor: pointer;
+}
+
+.ht6-button.primary {
+    box-shadow: 0 0.125em 0.25em 0 #00000033;
+    background-color: var(--secondary-dark-navy);
+    border: 1px solid var(--secondary-dark-navy);
+    text-transform: uppercase;
+}
