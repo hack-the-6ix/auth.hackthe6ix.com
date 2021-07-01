@@ -38,10 +38,10 @@
 
 <body class="${properties.kcBodyClass!}">
 <div class="${properties.kcLoginClass!}">
-    <div id="kc-header" class="${properties.kcHeaderClass!}">
-        <div id="kc-header-wrapper"
-             class="${properties.kcHeaderWrapperClass!}">${kcSanitize(msg("loginTitleHtml",(realm.displayNameHtml!'')))?no_esc}</div>
-    </div>
+<#--    <div id="kc-header" class="${properties.kcHeaderClass!}">-->
+<#--        <div id="kc-header-wrapper"-->
+<#--             class="${properties.kcHeaderWrapperClass!}">${kcSanitize(msg("loginTitleHtml",(realm.displayNameHtml!'')))?no_esc}</div>-->
+<#--    </div>-->
     <div class="${properties.kcFormCardClass!}">
         <header class="${properties.kcFormHeaderClass!}">
             <#if realm.internationalizationEnabled  && locale.supported?size gt 1>
@@ -65,10 +65,12 @@
                         <span class="subtitle"><span class="required">*</span> ${msg("requiredFields")}</span>
                     </div>
                     <div class="col-md-10">
+                        <small id="kc-page-title-ht6">${properties.headerBrand}</small>
                         <h1 id="kc-page-title"><#nested "header"></h1>
                     </div>
                 </div>
             <#else>
+                <small id="kc-page-title-ht6">${properties.headerBrand}</small>
                 <h1 id="kc-page-title"><#nested "header"></h1>
             </#if>
         <#else>
@@ -110,14 +112,19 @@
           <#-- App-initiated actions should not see warning messages about the need to complete the action -->
           <#-- during login.                                                                               -->
           <#if displayMessage && message?has_content && (message.type != 'warning' || !isAppInitiatedAction??)>
-              <div class="alert-${message.type} ${properties.kcAlertClass!} pf-m-<#if message.type = 'error'>danger<#else>${message.type}</#if>">
-                  <div class="pf-c-alert__icon">
-                      <#if message.type = 'success'><span class="${properties.kcFeedbackSuccessIcon!}"></span></#if>
-                      <#if message.type = 'warning'><span class="${properties.kcFeedbackWarningIcon!}"></span></#if>
-                      <#if message.type = 'error'><span class="${properties.kcFeedbackErrorIcon!}"></span></#if>
-                      <#if message.type = 'info'><span class="${properties.kcFeedbackInfoIcon!}"></span></#if>
-                  </div>
+<#--              <div class="alert-${message.type} ${properties.kcAlertClass!} pf-m-<#if message.type = 'error'>danger<#else>${message.type}</#if>">-->
+<#--                  <div class="pf-c-alert__icon">-->
+<#--                      <#if message.type = 'success'><span class="${properties.kcFeedbackSuccessIcon!}"></span></#if>-->
+<#--                      <#if message.type = 'warning'><span class="${properties.kcFeedbackWarningIcon!}"></span></#if>-->
+<#--                      <#if message.type = 'error'><span class="${properties.kcFeedbackErrorIcon!}"></span></#if>-->
+<#--                      <#if message.type = 'info'><span class="${properties.kcFeedbackInfoIcon!}"></span></#if>-->
+<#--                  </div>-->
+<#--                      <span class="${properties.kcAlertTitleClass!}">${kcSanitize(message.summary)?no_esc}</span>-->
+<#--              </div>-->
+              <div class="${properties.kcInfoCardClass} ${message.type}">
+                  <div class="content">
                       <span class="${properties.kcAlertTitleClass!}">${kcSanitize(message.summary)?no_esc}</span>
+                  </div>
               </div>
           </#if>
 

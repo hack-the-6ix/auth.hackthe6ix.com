@@ -1,10 +1,18 @@
 <#import "template.ftl" as layout>
+<#import "components/infocard.ftl" as infocard>
 <@layout.registrationLayout displayMessage=!messagesPerField.existsError('username','password') displayInfo=realm.password && realm.registrationAllowed && !registrationDisabled??; section>
     <#if section = "header">
         ${msg("loginAccountTitle")}
     <#elseif section = "form">
     <div id="kc-form">
       <div id="kc-form-wrapper">
+          <#if messagesPerField.existsError('username','password')>
+              <@infocard.card type="error">
+                  <span id="input-error" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
+                        ${kcSanitize(messagesPerField.getFirstError('username','password'))?no_esc}
+                        </span>
+              </@infocard.card>
+          </#if>
         <#if realm.password>
             <form id="kc-form-login" onsubmit="login.disabled = true; return true;" action="${url.loginAction}" method="post">
                 <div class="${properties.kcFormGroupClass!}">
@@ -17,11 +25,6 @@
                                aria-invalid="<#if messagesPerField.existsError('username','password')>true</#if>"
                         />
 
-                        <#if messagesPerField.existsError('username','password')>
-                            <span id="input-error" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
-                                    ${kcSanitize(messagesPerField.getFirstError('username','password'))?no_esc}
-                            </span>
-                        </#if>
                     </#if>
                 </div>
 

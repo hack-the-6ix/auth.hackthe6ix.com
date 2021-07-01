@@ -9,6 +9,16 @@ html {
     height: 100%;
     font-family: 'Open Sans';
 }
+
+a {
+    color: #CA500B;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #CC8535;
+}
+
 .ht6-kc-body {
     background: linear-gradient(180deg, #012c3800 40%, #032D39 60%), linear-gradient(90deg, #002C37 2%, #004D57 96%);
     background-size: cover;
@@ -32,13 +42,21 @@ html {
     background-color: white;
     border-radius: 12px;
     width: 45vw;
-    padding: 1% 10%;
+    padding: 2% 10%;
+}
+.ht6-form-header {
+
+}
+#kc-page-title-ht6 {
+    color: #828282;
+    font-weight: 600;
 }
 #kc-page-title {
     font-weight: 700;
     color: var(--secondary-dark-navy);
     font-size: 42px;
     text-align: left;
+    margin-top: 0;
 }
 
 /* Form stuff */
@@ -58,16 +76,26 @@ html {
     font-weight: 700;
 }
 
+.ht6-input-error-msg {
+    display: block;
+}
+
+input[aria-invalid='true'] {
+    border: 1px solid #CA500B;
+    background-color: #FFF5EF;
+}
+
 .ht6-button {
     color: white;
     padding: calc(0.5em - 1px) calc(1em - 1px);
     letter-spacing: 0.125em;
     border-radius: 0.125em;
-    justify-content: center;
-    display: inline-flex;
-    align-items: center;
     appearance: none;
     cursor: pointer;
+    position: relative;
+    right: 0;
+    float: right;
+    clear: right;
 }
 
 .ht6-button.primary {
@@ -75,4 +103,47 @@ html {
     background-color: var(--secondary-dark-navy);
     border: 1px solid var(--secondary-dark-navy);
     text-transform: uppercase;
+}
+
+/* Misc. Components */
+.ht6-info-card {
+    padding-left: 1.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-bottom: 2em;
+    border-left: 2px solid #4F4F4F;
+    background-color: #F2F2F2;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+}
+
+.ht6-info-card .content .title {
+    margin-top: 0;
+    color: #0B2F39;
+}
+
+.ht6-info-card.success {
+    border-left: 2px solid #0F893B;
+    background-color: #F3FFF8;
+}
+
+.ht6-info-card.warning {
+    border-left: 2px solid #CA500B;
+    background-color: #FFF5EF;
+}
+
+.ht6-info-card.error {
+    border-left: 2px solid #CA500B;
+    background-color: #FFF5EF;
+}
+
+.ht6-info-card img {
+    grid-column: span 2;
+}
+
+.ht6-info-card .content {
+    grid-column: span 10;
 }
