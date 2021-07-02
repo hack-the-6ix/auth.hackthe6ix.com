@@ -1,10 +1,20 @@
 <#import "template.ftl" as layout>
+<#import "components/infocard.ftl" as infocard>
     <@layout.registrationLayout displayMessage=!messagesPerField.existsError('totp'); section>
         <#if section="header">
             ${msg("doLogIn")}
             <#elseif section="form">
                 <form id="kc-otp-login-form" class="${properties.kcFormClass!}" action="${url.loginAction}"
                     method="post">
+                    <#if messagesPerField.existsError('totp')>
+                        <@infocard.card type="error">
+                            <span id="input-error-otp-code" class="${properties.kcInputErrorMessageClass!}"
+                                  aria-live="polite">
+                                ${kcSanitize(messagesPerField.get('totp'))?no_esc}
+                            </span>
+                        </@infocard.card>
+                    </#if>
+
                     <#if otpLogin.userOtpCredentials?size gt 1>
                         <div class="${properties.kcFormGroupClass!}">
                             <div class="${properties.kcInputWrapperClass!}">
@@ -31,13 +41,6 @@
                     <div class="${properties.kcInputWrapperClass!}">
                         <input id="otp" name="otp" autocomplete="off" type="text" class="${properties.kcInputClass!}"
                                autofocus aria-invalid="<#if messagesPerField.existsError('totp')>true</#if>"/>
-
-                        <#if messagesPerField.existsError('totp')>
-                            <span id="input-error-otp-code" class="${properties.kcInputErrorMessageClass!}"
-                                  aria-live="polite">
-                                ${kcSanitize(messagesPerField.get('totp'))?no_esc}
-                            </span>
-                        </#if>
                     </div>
                 </div>
 

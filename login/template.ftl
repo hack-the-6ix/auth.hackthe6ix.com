@@ -1,3 +1,4 @@
+<#import "components/infocard.ftl" as infocard>
 <#macro registrationLayout bodyClass="" displayInfo=false displayMessage=true displayRequiredFields=false showAnotherWayIfPresent=true>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" class="${properties.kcHtmlClass!}">
@@ -121,11 +122,9 @@
 <#--                  </div>-->
 <#--                      <span class="${properties.kcAlertTitleClass!}">${kcSanitize(message.summary)?no_esc}</span>-->
 <#--              </div>-->
-              <div class="${properties.kcInfoCardClass} ${message.type}">
-                  <div class="content">
-                      <span class="${properties.kcAlertTitleClass!}">${kcSanitize(message.summary)?no_esc}</span>
-                  </div>
-              </div>
+              <@infocard.card type="${message.type}" titleOverride="${message.type?capitalize}">
+                  <span class="${properties.kcAlertTitleClass!}">${kcSanitize(message.summary)?no_esc}</span>
+              </@infocard.card>
           </#if>
 
           <#nested "form">

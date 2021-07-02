@@ -1,9 +1,24 @@
 <#import "template.ftl" as layout>
+<#import "components/infocard.ftl" as infocard>
 <@layout.registrationLayout displayMessage=!messagesPerField.existsError('password','password-confirm'); section>
     <#if section = "header">
         ${msg("updatePasswordTitle")}
     <#elseif section = "form">
         <form id="kc-passwd-update-form" class="${properties.kcFormClass!}" action="${url.loginAction}" method="post">
+            <#if messagesPerField.existsError('password', 'password-confirm')>
+                <@infocard.card type="error">
+                    <#if messagesPerField.existsError('password')>
+                        <span id="input-error-password" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
+                            ${kcSanitize(messagesPerField.get('password'))?no_esc}
+                        </span>
+                    </#if>
+                    <#if messagesPerField.existsError('password-confirm')>
+                        <span id="input-error-password-confirm" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
+                            ${kcSanitize(messagesPerField.get('password-confirm'))?no_esc}
+                        </span>
+                    </#if>
+                </@infocard.card>
+            </#if>
             <input type="text" id="username" name="username" value="${username}" autocomplete="username"
                    readonly="readonly" style="display:none;"/>
             <input type="password" id="password" name="password" autocomplete="current-password" style="display:none;"/>
@@ -17,12 +32,6 @@
                            autofocus autocomplete="new-password"
                            aria-invalid="<#if messagesPerField.existsError('password','password-confirm')>true</#if>"
                     />
-
-                    <#if messagesPerField.existsError('password')>
-                        <span id="input-error-password" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
-                            ${kcSanitize(messagesPerField.get('password'))?no_esc}
-                        </span>
-                    </#if>
                 </div>
             </div>
 
@@ -36,12 +45,6 @@
                            autocomplete="new-password"
                            aria-invalid="<#if messagesPerField.existsError('password-confirm')>true</#if>"
                     />
-
-                    <#if messagesPerField.existsError('password-confirm')>
-                        <span id="input-error-password-confirm" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
-                            ${kcSanitize(messagesPerField.get('password-confirm'))?no_esc}
-                        </span>
-                    </#if>
 
                 </div>
             </div>

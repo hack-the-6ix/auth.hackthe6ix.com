@@ -1,9 +1,17 @@
 <#import "template.ftl" as layout>
+<#import "components/infocard.ftl" as infocard>
 <@layout.registrationLayout displayRequiredFields=false displayMessage=!messagesPerField.existsError('totp','userLabel'); section>
 
     <#if section = "header">
         ${msg("loginTotpTitle")}
     <#elseif section = "form">
+        <#if messagesPerField.existsError('totp')>
+            <@infocard.card type="error">
+                <span id="input-error-otp-code" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
+                            ${kcSanitize(messagesPerField.get('totp'))?no_esc}
+                        </span>
+            </@infocard.card>
+        </#if>
         <ol id="kc-totp-settings">
             <li>
                 <p>${msg("loginTotpStep1")}</p>
@@ -58,12 +66,6 @@
                     <input type="text" id="totp" name="totp" autocomplete="off" class="${properties.kcInputClass!}"
                            aria-invalid="<#if messagesPerField.existsError('totp')>true</#if>"
                     />
-
-                    <#if messagesPerField.existsError('totp')>
-                        <span id="input-error-otp-code" class="${properties.kcInputErrorMessageClass!}" aria-live="polite">
-                            ${kcSanitize(messagesPerField.get('totp'))?no_esc}
-                        </span>
-                    </#if>
 
                 </div>
                 <input type="hidden" id="totpSecret" name="totpSecret" value="${totp.totpSecret}" />
