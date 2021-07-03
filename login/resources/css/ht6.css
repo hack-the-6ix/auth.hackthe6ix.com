@@ -1,13 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap');
 :root {
     --secondary-dark-navy: #08566B;
+    --copy-navy: #0B2F39;
+    --form-half-width-width: 45%;
+    --form-half-width-margin: 5%;
 }
 * {
     box-sizing: border-box;
 }
 html {
     height: 100%;
-    font-family: 'Open Sans';
+    font-family: 'Open Sans', sans-serif;
+}
+
+input {
+    font-family: 'Open Sans', sans-serif;
 }
 
 a {
@@ -20,7 +27,7 @@ a:hover {
 }
 
 .ht6-kc-body {
-    background: linear-gradient(180deg, #012c3800 40%, #032D39 60%), linear-gradient(90deg, #002C37 2%, #004D57 96%);
+    background: linear-gradient(88.96deg, #002C37 1.77%, #004D57 95.9%);
     background-size: cover;
     height: 100%;
     margin: 0;
@@ -37,15 +44,61 @@ a:hover {
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: calc(0.625rem + 8px) calc(1.5rem + 8px);
 }
+
+.ht6-login-header img {
+    width: 24px;
+    margin-right: 1rem;
+}
+
+.ht6-login-header span {
+    font-weight: 700;
+    font-size: 1.625rem;
+    line-height: 2.5rem;
+    letter-spacing: 0.0625rem;
+}
+
+.ht6-login-header span:first-of-type {
+    color: rgb(35, 181, 175);
+}
+
+.ht6-login-header span:last-of-type {
+    color: rgb(248, 182, 85);
+}
+
 .ht6-login-formcard {
     background-color: white;
     border-radius: 12px;
-    width: 45vw;
-    padding: 2% 10%;
+    width: 85vw;
+    padding: 10% 10%;
 }
-.ht6-form-header {
 
+.ht6-card-infoarea {
+    color: var(--copy-navy);
+    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    .ht6-login-formcard {
+        width: 70vw;
+        padding: 5% 10%;
+    }
+}
+
+@media (min-width: 992px) {
+    .ht6-login-formcard {
+        width: 55vw;
+        padding: 2% 10%;
+    }
+}
+
+.ht6-form-header {
+    margin-bottom: 1em;
 }
 #kc-page-title-ht6 {
     color: #828282;
@@ -68,6 +121,7 @@ a:hover {
     width: 25em;
     max-width: 100%;
 }
+
 .ht6-form-group label,.ht6-form-group input {
     display: block;
 }
@@ -83,6 +137,34 @@ a:hover {
 input[aria-invalid='true'] {
     border: 1px solid #CA500B;
     background-color: #FFF5EF;
+}
+
+#kc-register-form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#kc-register-form > .ht6-form-group > div > .ht6-form-input {
+    width: 100%;
+}
+
+#kc-register-form > .full-width > div > .ht6-form-input {
+    width: var(--form-half-width-width);
+}
+
+
+.ht6-form-group.full-width{
+    width: 100%;
+    flex-basis: 100%;
+}
+
+.ht6-form-group.half-width.left {
+    width: var(--form-half-width-width);
+    margin-right: var(--form-half-width-margin);
+}
+
+.ht6-form-group.half-width.right {
+    width: 50%;
 }
 
 .ht6-button {
@@ -118,6 +200,8 @@ input[aria-invalid='true'] {
     grid-template-columns: repeat(12, 1fr);
     grid-column-gap: 1em;
     grid-row-gap: 1em;
+
+    width: 100%;
 }
 
 .ht6-info-card .content .title {
@@ -141,7 +225,7 @@ input[aria-invalid='true'] {
 }
 
 .ht6-info-card img {
-    grid-column: span 2;
+    grid-column: span 1;
 }
 
 .ht6-info-card .content {

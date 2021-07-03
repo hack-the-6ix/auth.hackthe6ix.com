@@ -1,6 +1,6 @@
 <#import "template.ftl" as layout>
 <#import "components/infocard.ftl" as infocard>
-<@layout.registrationLayout displayMessage=!messagesPerField.existsError('firstName','lastName','email','username','password','password-confirm'); section>
+<@layout.registrationLayout displayMessage=!messagesPerField.existsError('firstName','lastName','email','username','password','password-confirm') displayInfo=true; section>
     <#if section = "header">
         ${msg("registerTitle")}
     <#elseif section = "form">
@@ -39,7 +39,7 @@
                     </#if>
                 </@infocard.card>
             </#if>
-            <div class="${properties.kcFormGroupClass!}">
+            <div class="${properties.kcFormGroupClass!} half-width left">
                 <div class="${properties.kcLabelWrapperClass!}">
                     <label for="firstName" class="${properties.kcLabelClass!}">${msg("firstName")}</label>
                 </div>
@@ -51,7 +51,7 @@
                 </div>
             </div>
 
-            <div class="${properties.kcFormGroupClass!}">
+            <div class="${properties.kcFormGroupClass!} half-width right">
                 <div class="${properties.kcLabelWrapperClass!}">
                     <label for="lastName" class="${properties.kcLabelClass!}">${msg("lastName")}</label>
                 </div>
@@ -63,7 +63,7 @@
                 </div>
             </div>
 
-            <div class="${properties.kcFormGroupClass!}">
+            <div class="${properties.kcFormGroupClass!} full-width">
                 <div class="${properties.kcLabelWrapperClass!}">
                     <label for="email" class="${properties.kcLabelClass!}">${msg("email")}</label>
                 </div>
@@ -76,7 +76,7 @@
             </div>
 
             <#if !realm.registrationEmailAsUsername>
-                <div class="${properties.kcFormGroupClass!}">
+                <div class="${properties.kcFormGroupClass!} full-width">
                     <div class="${properties.kcLabelWrapperClass!}">
                         <label for="username" class="${properties.kcLabelClass!}">${msg("username")}</label>
                     </div>
@@ -90,7 +90,7 @@
             </#if>
 
             <#if passwordRequired??>
-                <div class="${properties.kcFormGroupClass!}">
+                <div class="${properties.kcFormGroupClass!} half-width left">
                     <div class="${properties.kcLabelWrapperClass!}">
                         <label for="password" class="${properties.kcLabelClass!}">${msg("password")}</label>
                     </div>
@@ -102,7 +102,7 @@
                     </div>
                 </div>
 
-                <div class="${properties.kcFormGroupClass!}">
+                <div class="${properties.kcFormGroupClass!} half-width right">
                     <div class="${properties.kcLabelWrapperClass!}">
                         <label for="password-confirm"
                                class="${properties.kcLabelClass!}">${msg("passwordConfirm")}</label>
@@ -124,17 +124,14 @@
                 </div>
             </#if>
 
-            <div class="${properties.kcFormGroupClass!}">
-                <div id="kc-form-options" class="${properties.kcFormOptionsClass!}">
-                    <div class="${properties.kcFormOptionsWrapperClass!}">
-                        <span><a href="${url.loginUrl}">${kcSanitize(msg("backToLogin"))?no_esc}</a></span>
-                    </div>
-                </div>
-
+            <div class="${properties.kcFormGroupClass!} full-width">
                 <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
                     <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" type="submit" value="${msg("doRegister")}"/>
                 </div>
             </div>
         </form>
+    <#elseif section = "info" >
+        <h4>${kcSanitize(msg("registerInfo"))?no_esc}</h4>
+        <h4>${kcSanitize(msg("registerBackToLoginInfo"))?no_esc} <a href="${url.loginUrl}">${kcSanitize(msg("registerBackToLogin"))?no_esc}</a></h4>
     </#if>
 </@layout.registrationLayout>

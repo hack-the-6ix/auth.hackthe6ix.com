@@ -39,10 +39,13 @@
 
 <body class="${properties.kcBodyClass!}">
 <div class="${properties.kcLoginClass!}">
-<#--    <div id="kc-header" class="${properties.kcHeaderClass!}">-->
+    <div id="kc-header" class="${properties.kcHeaderClass!}">
 <#--        <div id="kc-header-wrapper"-->
 <#--             class="${properties.kcHeaderWrapperClass!}">${kcSanitize(msg("loginTitleHtml",(realm.displayNameHtml!'')))?no_esc}</div>-->
-<#--    </div>-->
+        <img src="${url.resourcesPath}/images/ht6-icon.svg">
+        <span>HT6&nbsp;</span>
+        <span>DIGITAL</span>
+    </div>
     <div class="${properties.kcFormCardClass!}">
         <header class="${properties.kcFormHeaderClass!}">
             <#if realm.internationalizationEnabled  && locale.supported?size gt 1>
@@ -106,6 +109,13 @@
                 </div>
             </#if>
         </#if>
+            <#if displayInfo>
+                <div id="kc-info" class="${properties.kcSignUpClass!}">
+                    <div id="kc-info-wrapper" class="${properties.kcInfoAreaWrapperClass!}">
+                        <#nested "info">
+                    </div>
+                </div>
+            </#if>
       </header>
       <div id="kc-content">
         <div id="kc-content-wrapper">
@@ -138,14 +148,6 @@
                     </div>
                 </form>
             </#if>
-
-          <#if displayInfo>
-              <div id="kc-info" class="${properties.kcSignUpClass!}">
-                  <div id="kc-info-wrapper" class="${properties.kcInfoAreaWrapperClass!}">
-                      <#nested "info">
-                  </div>
-              </div>
-          </#if>
         </div>
       </div>
 
