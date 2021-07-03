@@ -122,6 +122,10 @@ a:hover {
     max-width: 100%;
 }
 
+.checkbox > label > input[type="checkbox"] {
+    display: inline;
+}
+
 .ht6-form-group label,.ht6-form-group input {
     display: block;
 }
