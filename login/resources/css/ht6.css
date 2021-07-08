@@ -33,18 +33,20 @@ a:hover {
     margin: 0;
 }
 .ht6-login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
     width: 100%;
+    height: 100%;
     padding: unset;
+    display: flex;
+    flex-direction: column;
 }
+
+.ht6-login > * {
+    flex-shrink: 0;
+}
+
 .ht6-login-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    position: relative;
+    width: 100%;
     z-index: 1000;
     display: flex;
     align-items: center;
@@ -71,11 +73,19 @@ a:hover {
     color: rgb(248, 182, 85);
 }
 
+.ht6-login-formcardwrapper {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .ht6-login-formcard {
     background-color: white;
     border-radius: 12px;
     width: 85vw;
     padding: 10% 10%;
+    margin: 2%;
 }
 
 .ht6-card-infoarea {
@@ -98,7 +108,7 @@ a:hover {
 }
 
 .ht6-form-header {
-    margin-bottom: 1em;
+    margin-bottom: 2em;
 }
 #kc-page-title-ht6 {
     color: #828282;
@@ -110,6 +120,7 @@ a:hover {
     font-size: 42px;
     text-align: left;
     margin-top: 0;
+    margin-bottom: 0.125em;
 }
 
 /* Form stuff */
@@ -143,33 +154,36 @@ input[aria-invalid='true'] {
     background-color: #FFF5EF;
 }
 
-#kc-register-form {
-    display: flex;
-    flex-wrap: wrap;
+@media (min-width: 768px) {
+    #kc-register-form {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+    }
+
+    #kc-register-form > .ht6-form-group > div > .ht6-form-input {
+        width: 100%;
+    }
+
+    #kc-register-form > .full-width > div > .ht6-form-input {
+        width: var(--form-half-width-width);
+    }
+
+    .ht6-form-group.full-width{
+        width: 100%;
+        flex-basis: 100%;
+    }
+
+    .ht6-form-group.half-width.left {
+        width: var(--form-half-width-width);
+        margin-right: var(--form-half-width-margin);
+    }
+
+    .ht6-form-group.half-width.right {
+        width: 50%;
+    }
 }
 
-#kc-register-form > .ht6-form-group > div > .ht6-form-input {
-    width: 100%;
-}
-
-#kc-register-form > .full-width > div > .ht6-form-input {
-    width: var(--form-half-width-width);
-}
-
-
-.ht6-form-group.full-width{
-    width: 100%;
-    flex-basis: 100%;
-}
-
-.ht6-form-group.half-width.left {
-    width: var(--form-half-width-width);
-    margin-right: var(--form-half-width-margin);
-}
-
-.ht6-form-group.half-width.right {
-    width: 50%;
-}
 
 .ht6-button {
     color: white;
