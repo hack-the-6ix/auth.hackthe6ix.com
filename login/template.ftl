@@ -43,8 +43,7 @@
 <#--        <div id="kc-header-wrapper"-->
 <#--             class="${properties.kcHeaderWrapperClass!}">${kcSanitize(msg("loginTitleHtml",(realm.displayNameHtml!'')))?no_esc}</div>-->
         <img src="${url.resourcesPath}/images/ht6-icon.svg">
-        <span>HT6&nbsp;</span>
-        <span>DIGITAL</span>
+        <span>HACK THE 6IX</span>
     </div>
     <div class="${properties.kcFormCardWrapperClass!}">
         <div class="${properties.kcFormCardClass!}">
