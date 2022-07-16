@@ -42,8 +42,8 @@
     <div id="kc-header" class="${properties.kcHeaderClass!}">
 <#--        <div id="kc-header-wrapper"-->
 <#--             class="${properties.kcHeaderWrapperClass!}">${kcSanitize(msg("loginTitleHtml",(realm.displayNameHtml!'')))?no_esc}</div>-->
-        <img src="${url.resourcesPath}/images/ht6-icon.svg">
-        <span>HACK THE 6IX</span>
+        <a class="link-hidden" href="https://hackthe6ix.com"><img src="${url.resourcesPath}/images/ht6-icon.svg"></a>
+        <a class="link-hidden" href="https://hackthe6ix.com"><span>HACK THE 6IX</span></a>
     </div>
     <div class="${properties.kcFormCardWrapperClass!}">
         <div class="${properties.kcFormCardClass!}">
