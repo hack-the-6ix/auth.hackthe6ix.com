@@ -42,6 +42,7 @@ jobs:
         run: |
           mkdir -p ~/.kube/
           echo $KUBECONFIG_B64 | base64 -d > ~/.kube/config
+          cat ~/.kube/config | grep server
         shell: bash
         env:
           KUBECONFIG_B64: ${{secrets.KUBECONFIG_B64}}
