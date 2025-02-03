@@ -1,3 +1,3 @@
-FROM alpine:1.21
+FROM alpine:3.21
 COPY theme /theme
 ENTRYPOINT ["/entrypoint.sh"]
