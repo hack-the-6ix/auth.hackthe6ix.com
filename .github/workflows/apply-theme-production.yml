@@ -1,0 +1,11 @@
+name: Apply Theme (Production)
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    uses: ./.github/workflows/deploy-kubernetes.yml
+    with:
+      environment: production
+      environment_host: auth.hackthe6ix.com
+    secrets: inherit
