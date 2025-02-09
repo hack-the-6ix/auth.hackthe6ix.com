@@ -26,6 +26,7 @@
 
                             <input tabindex="2" id="username" class="${properties.kcInputClass!}" name="username" value="${(login.username!'')}"  type="text" autofocus autocomplete="username"
                                    aria-invalid="<#if messagesPerField.existsError('username','password')>true</#if>"
+                                   placeholder="${msg('emailPlaceholder')}"
                             />
 
                             <#if messagesPerField.existsError('username','password')>
@@ -43,6 +44,7 @@
                         <div class="${properties.kcInputGroup!}">
                             <input tabindex="3" id="password" class="${properties.kcInputClass!}" name="password" type="password" autocomplete="current-password"
                                    aria-invalid="<#if messagesPerField.existsError('username','password')>true</#if>"
+                                   placeholder="${msg('passwordPlaceholder')}"
                             />
                             <button class="${properties.kcFormPasswordVisibilityButtonClass!}" type="button" aria-label="${msg("showPassword")}"
                                     aria-controls="password" data-password-toggle tabindex="4"

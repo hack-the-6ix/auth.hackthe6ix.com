@@ -1,285 +1,288 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 div.kc-logo-text {
-    display: none;
+  display: none;
 }
 
 #kc-registration-container {
-    margin-top: -10px;
-    margin-bottom: 20px; /* Add spacing below the registration container */
+  margin-top: -10px;
+  margin-bottom: 20px; /* Add spacing below the registration container */
 }
 
-.black-theme input.pf-c-form-control {
-    background-color: #00685E !important;
-    color: white !important;
-}
-
-.light-theme input.pf-c-form-control {
-    background-color: white !important;
-    color: black !important;
-}
 body {
-    background-color: transparent !important;
+  background-color: transparent !important;
 }
 
 body.black-theme {
-    background-color: #121212 !important;
-    color: white !important;
-    background-image: none !important;
-    background-image: url("../img/dark-bg.png") !important;
-    --pf-c-form-control--BackgroundColor: #00685E !important;
-    --pf-c-form-control--BorderBottomColor: #00887E !important; /* Ensures contrast */
-    --pf-c-form-control--Color: white !important; /* Text color for readabili */
-    --pf-global--primary-color--100: #00A59E;
-    --link--color: #ffffff;
-    --button--color: #2C5350;
-
+  background-color: #121212 !important;
+  color: white !important;
+  background-image: none !important;
+  background-image: url("../img/dark-bg.png") !important;
+  --pf-c-form-control--BackgroundColor: #00685e !important;
+  --pf-c-form-control--BorderBottomColor: #00887e !important; /* Ensures contrast */
+  --pf-c-form-control--Color: white !important; /* Text color for readabili */
+  --pf-global--primary-color--100: #00a59e;
+  --link--color: #ffffff;
+  --button--color: #2c5350;
 }
 
 body.light-theme {
-    background-color: white !important;
-    color: black !important;
-    --pf-c-form-control--BackgroundColor: white !important;
-    --pf-c-form-control--BorderBottomColor: #00887E !important; /* Keeps the same border */
-    --pf-c-form-control--BorderRightColor: #00887E !important; /* Keeps the same border */
-    --pf-c-form-control--Color: black !important;
-    --pf-global--primary-color--100: #00887E;
-    --link--color: #00887E;
-    --button--color: #ffffff;
-
+  background-color: white !important;
+  color: black !important;
+  --pf-c-form-control--BackgroundColor: white !important;
+  --pf-c-form-control--BorderBottomColor: #00887e !important; /* Keeps the same border */
+  --pf-c-form-control--BorderRightColor: #00887e !important; /* Keeps the same border */
+  --pf-c-form-control--Color: black !important;
+  --pf-global--primary-color--100: #00887e;
+  --link--color: #00887e;
+  --button--color: #ffffff;
 }
 body.black-theme .card-pf {
-    background: #004C40 !important; /* Darker background for dark mode */
-    color: white !important;
-    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.175); /* Light shadow for contrast */
+  background: #004c40 !important; /* Darker background for dark mode */
+  color: white !important;
+  /* box-shadow: 0 1px 1px rgba(255, 255, 255, 0.175); */
 }
 
 body.light-theme .card-pf {
-    background: #fff !important; /* Keep the default light mode background */
-    color: black !important;
+  background: #fff !important; /* Keep the default light mode background */
+  color: black !important;
 }
-
 
 .custom-top-right-button {
-    position: fixed;
-    top: 10px;
-    right: 10px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
 }
 
-
 .forgot-password-container {
-    text-align: center; /* Center the link */
-    margin-top: 15px; /* Optional: add space above */
+  text-align: center; /* Center the link */
+  margin-top: 15px; /* Optional: add space above */
 }
 
 .forgot-password-container a {
-    color: var(--link--color); /* Green color */
-    text-decoration: underline; /* Remove underline */
+  color: var(--link--color); /* Green color */
+  text-decoration: underline; /* Remove underline */
 }
 
 .forgot-password-container a:hover {
-    text-decoration: underline; /* Optional: underline on hover */
-    color: #003b37; /* Green color */
+  text-decoration: underline; /* Optional: underline on hover */
+  color: #003b37; /* Green color */
 }
-
 
 #kc-registration span a {
-    color: var(--link--color);  /* Set the link color */
-    text-decoration: underline;
-    margin-left: 8px;    /* Add space between the message and the link */
+  color: var(--link--color); /* Set the link color */
+  text-decoration: underline;
+  margin-left: 8px; /* Add space between the message and the link */
 }
 
-
 #kc-registration span a:hover {
-    color: #003e3a;  /* Set the link color */
+  color: #003e3a; /* Set the link color */
 }
 
 /* Hide the text but keep the space occupied by the header */
 #kc-header-wrapper {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 #rememberMe {
-    accent-color: #00887E; /* Set the checkbox to green */
-}
-
-
-
-/* Remove the default blue outline when the checkbox is focused */
-
-/* Load font */
-@font-face {
-    font-family: 'Inter';
-    src: url('path/to/font.woff2') format('woff2'),
-         url('path/to/font.woff') format('woff');
-    font-style: normal;
-    font-weight: bold; /* Make the font bold globally */
-
+  accent-color: #00887e; /* Set the checkbox to green */
 }
 
 /* Apply globally */
 body {
-    font-family: 'Inter', sans-serif;
-    font-weight: 599; /* Apply semi-bold styling globally */
-
-
+  font-family: "Inter", sans-serif;
+  font-weight: 599; /* Apply semi-bold styling globally */
 }
 
 /* Apply to specific classes */
 .login-pf {
-    font-family: 'Inter', sans-serif;
-    font-weight: bold; /* Make the font bold globally */
-
+  font-family: "Inter", sans-serif;
+  font-weight: bold; /* Make the font bold globally */
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter', sans-serif;
-    font-weight: bold; /* Make the font bold globally */
-    color: #08566B;
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Inter", sans-serif;
+  font-weight: bold; /* Make the font bold globally */
+  color: #08566b;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter', sans-serif;
-    font-weight: bold;
-    color: #08566B; /* Default color for light mode */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  color: #08566b; /* Default color for light mode */
 }
 
 /* Dark mode styling */
-body.black-theme h1, 
-body.black-theme h2, 
-body.black-theme h3, 
-body.black-theme h4, 
-body.black-theme h5, 
+body.black-theme h1,
+body.black-theme h2,
+body.black-theme h3,
+body.black-theme h4,
+body.black-theme h5,
 body.black-theme h6 {
-    color: white; /* Change text color to white in dark mode */
+  color: white; /* Change text color to white in dark mode */
 }
 
-
-
-
-.pf-c-button, .pf-c-form-control {
-    font-family: 'Inner', sans-serif;
-    --pf-c-button--m-primary--hover--BackgroundColor: #00504b; /* Change the hover color */
-    --pf-c-form-control--hover--BorderBottomColor: unset;
-    
-    
+.pf-c-button {
+  font-family: "Inter", sans-serif;
+  --pf-c-button--m-primary--hover--BackgroundColor: #00504b; /* Change the hover color */
+  --pf-c-form-control--hover--BorderBottomColor: unset;
 }
 
+.pf-c-form-control {
+  font-size: 12px;
+  /* Remove default hover and focus behavior */
+  --pf-c-form-control--hover--BorderBottomColor: unset;
+  --pf-c-form-control--focus--BorderBottomColor: unset;
+  --pf-c-form-control--focus--BorderColor: unset;
+  --pf-c-form-control--focus--BoxShadow: none;
+
+  border: 1px solid #919daf !important; /* Custom focus border color */
+  outline: none;
+  padding-bottom: 5px !important;
+
+  .dark-theme {
+    color: #fff;
+  }
+
+  /* Set placeholder font color */
+  &::placeholder {
+    color: #919daf; /* Custom placeholder color */
+  }
+
+  &:hover {
+    border: 1px solid #00887e; /* Custom hover border color */
+  }
+
+  &:focus {
+    outline: none; /* Remove default outline */
+    border: 1px solid #00887e !important; /* Custom focus border color */
+    background-color: #f9f9f9 !important;
+  }
+
+  transition: all 0.15s ease;
+}
+
+.pf-c-form__label-text {
+  color: #08566b;
+}
 
 .btn-primary {
-    background-color: unset;
-    background-image: unset;
-    border-color: var(--button--color);
-    color: unset;
+  background-color: unset;
+  background-image: unset;
+  border-color: var(--button--color);
+  color: unset;
 }
 
-.btn-primary.active, 
-.btn-primary:active, 
+.btn-primary.active,
+.btn-primary:active,
 .btn-primary:focus {
-    background-color: inherit !important;
-    color: inherit !important;
-    border-color: var(--button--color);
-    box-shadow: none !important;
-    outline: none !important;
+  background-color: inherit !important;
+  color: inherit !important;
+  border-color: var(--button--color);
+  box-shadow: none !important;
+  outline: none !important;
 }
-
 
 .login-pf a:hover {
-    color: var(--button--color);
+  color: var(--button--color);
 }
 
 .btn {
-    box-shadow: unset;
+  box-shadow: unset;
 }
 
-
-.btn-primary.active, .btn-primary:active, .btn-primary:focus, .btn-primary:hover, .open .dropdown-toggle.btn-primary {
-    background-color: unset;
-    border-color: var(--button--color);
+.btn-primary.active,
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:hover,
+.open .dropdown-toggle.btn-primary {
+  background-color: unset;
+  border-color: var(--button--color);
 }
 
 .btn-primary:hover {
-    background-color: unset;
-    border-color: var(--button--color);
+  background-color: unset;
+  border-color: var(--button--color);
 }
 
 .kc-social-links li {
-    font-family: 'Inner', sans-serif;
-    font-weight: bold; /* Make the font bold globally */
-
+  font-family: "Inner", sans-serif;
+  font-weight: bold; /* Make the font bold globally */
 }
 
 #kc-info-wrapper {
-    font-size: 13px;
-    padding: 15px 35px;
-    background-color: transparent;
-    border-radius: 25px;
-    
+  font-size: 13px;
+  padding: 15px 35px;
+  background-color: transparent;
+  border-radius: 25px;
 }
-
-
-
 
 .card-pf {
-    margin: 0 auto;
-    box-shadow: var(--pf-global--BoxShadow--lg);
-    padding: 0 20px;
-    max-width: 500px;
-    border-top: none;
-    border-color: var(--pf-global--primary-color--100);
-    border-radius: 25px;
+  margin: 0 auto;
+  box-shadow: none;
+  padding: 60px !important;
+  max-width: 500px;
+  border-top: none;
+  /* border-color: var(--pf-global--primary-color--100); */
+  border-radius: 25px !important;
 }
-#kc-form, .pf-c-form-control, .pf-c-button {
-    border-radius: 45px; /* Rounded corners */
+#kc-form,
+.pf-c-form-control,
+.pf-c-button {
+  border-radius: 45px; /* Rounded corners */
 }
-
-
-
-
-
 
 /* Ensure the h1 element aligns to the left */
 #kc-page-title {
-    text-align: left;  /* Aligns text inside the h1 to the left */
-         /* Remove default margin to avoid unnecessary space */
+  text-align: left; /* Aligns text inside the h1 to the left */
+  margin: 0 !important; /* Remove default margin to avoid unnecessary space */
 }
 
 /* Hide the password visibility button */
 button[data-password-toggle] {
-    display: none;
+  display: none;
 }
-
-
-
 
 /* Custom styles for First Name and Last Name fields */
 /* Container for firstName and lastName */
 
-
-.pf-c-accordion, 
-.pf-c-alert, 
-.pf-c-banner.pf-m-blue, 
-.pf-c-banner.pf-m-gold, 
-.pf-c-banner.pf-m-info, 
-.pf-c-banner.pf-m-warning, 
-.pf-c-calendar-month, 
-.pf-c-chip, 
-.pf-c-chip-group, 
-.pf-c-context-selector__menu, 
-.pf-c-data-list, 
-.pf-c-form-control, 
-.pf-c-input-group, 
-.pf-c-masthead.pf-m-light, 
-.pf-c-masthead.pf-m-light-200, 
-.pf-c-menu, 
-.pf-c-page__sidebar.pf-m-light, 
-.pf-c-select, 
-.pf-c-table, 
+.pf-c-accordion,
+.pf-c-alert,
+.pf-c-banner.pf-m-blue,
+.pf-c-banner.pf-m-gold,
+.pf-c-banner.pf-m-info,
+.pf-c-banner.pf-m-warning,
+.pf-c-calendar-month,
+.pf-c-chip,
+.pf-c-chip-group,
+.pf-c-context-selector__menu,
+.pf-c-data-list,
+.pf-c-form-control,
+.pf-c-input-group,
+.pf-c-masthead.pf-m-light,
+.pf-c-masthead.pf-m-light-200,
+.pf-c-menu,
+.pf-c-page__sidebar.pf-m-light,
+.pf-c-select,
+.pf-c-table,
 .pf-t-light {
-    --pf-global--BackgroundColor--100: transparent !important;
+  --pf-global--BackgroundColor--100: transparent !important;
+}
+
+.login-pf-header {
+  margin: 0 !important;
 }
 
 :root {
-    --pf-global--BorderColor--300: #00887E !important;
+  --pf-global--BorderColor--300: #00887e !important;
 }
