@@ -162,30 +162,6 @@ h6 {
   padding-bottom: 5px !important;
   font-weight: var(--font-weight-normal);
 
-  &.black-theme {
-    color: var(--text-color-dark);
-
-    &:hover {
-      border: 1px solid var(--primary-color);
-    }
-    &:focus {
-      border: 1px solid var(--primary-color) !important;
-      background-color: #f9f9f9 !important;
-    }
-  }
-
-  &.light-theme {
-    background-color: var(--input-background-light);
-    color: var(--text-color-light);
-
-    &:hover {
-      border: 1px solid var(--primary-color);
-    }
-    &:focus {
-      border: 1px solid var(--primary-color) !important;
-      background-color: #f9f9f9 !important;
-    }
-  }
   transition: border-color var(--transition-duration) ease,
     background-color var(--transition-duration) ease;
 
@@ -200,14 +176,43 @@ h6 {
 }
 
 .black-theme .pf-c-form-control {
-  color: #fff !important;
+  color: var(--text-color-dark);
+
+  &:hover {
+    border: 1px solid var(--primary-color);
+  }
+  &:focus {
+    border: 1px solid var(--primary-color) !important;
+    background-color: var(--input-background-dark) !important;
+  }
+}
+
+.light-theme .pf-c-form-control {
+  background-color: var(--input-background-light);
+  color: var(--text-color-light);
+
+  &:hover {
+    border: 1px solid var(--primary-color);
+  }
+  &:focus {
+    border: 1px solid var(--primary-color) !important;
+    background-color: #f9f9f9 !important;
+  }
 }
 
 a {
   transition: all 0.15s ease;
+}
 
-  &.light-theme:hover,
-  &.light-theme:focus {
+.login-pf-signup {
+  display: none;
+}
+
+.light-theme a {
+  color: #29887e !important;
+
+  &:hover,
+  &:focus {
     color: #14504b !important;
   }
 }

@@ -24,6 +24,7 @@
                                     <input type="password" id="password" class="${properties.kcInputClass!}" name="password"
                                            autocomplete="new-password"
                                            aria-invalid="<#if messagesPerField.existsError('password','password-confirm')>true</#if>"
+                                           placeholder="${msg('passwordPlaceholder')}"
                                     />
 
                                     <button class="${properties.kcFormPasswordVisibilityButtonClass!}" type="button" aria-label="${msg('showPassword')}"
@@ -54,6 +55,7 @@
                                     <input type="password" id="password-confirm" class="${properties.kcInputClass!}"
                                            name="password-confirm"
                                            aria-invalid="<#if messagesPerField.existsError('password-confirm')>true</#if>"
+                                           placeholder="${msg('passwordConfirmPlaceholder')}"
                                     />
                                     <button class="${properties.kcFormPasswordVisibilityButtonClass!}" type="button" aria-label="${msg('showPassword')}"
                                             aria-controls="password-confirm"  data-password-toggle
