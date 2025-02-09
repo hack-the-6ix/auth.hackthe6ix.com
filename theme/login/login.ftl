@@ -66,7 +66,7 @@
                         <div id="kc-form-options">
                             <#if realm.rememberMe && !usernameHidden??>
                                 <div class="checkbox">
-                                    <label>
+                                    <label class="rememberMe">
                                         <#if login.rememberMe??>
                                             <input tabindex="5" id="rememberMe" name="rememberMe" type="checkbox" checked> ${msg("rememberMe")}
                                         <#else>
