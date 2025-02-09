@@ -1,285 +1,345 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
+:root {
+  --background-color-dark: #121212;
+  --background-color-light: #fff;
+  --text-color-dark: #fff;
+  --text-color-light: #000;
+  --primary-color: #00a59e;
+  --secondary-color: #2c5350;
+  --link-color-dark: #ffffff;
+  --link-color-light: #00887e;
+  --input-background-dark: #00685e;
+  --input-background-light: #fff;
+  --input-border-color: #00887e;
+  --transition-duration: 0.15s;
+  --font-family: "Inter", sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  --pf-global--BorderColor--300: #00887e !important;
+}
+
+body {
+  background-color: transparent !important;
+  font-family: var(--font-family);
+  font-weight: 599;
+  transition: var(--transition-duration) ease;
+
+  &.black-theme {
+    background-color: var(--background-color-dark) !important;
+    color: var(--text-color-dark) !important;
+    background-image: url("../img/dark-bg.png") !important;
+    --pf-c-form-control--BackgroundColor: var(
+      --input-background-dark
+    ) !important;
+    --pf-c-form-control--BorderBottomColor: var(
+      --input-border-color
+    ) !important;
+    --pf-c-form-control--Color: var(--text-color-dark) !important;
+    --link--color: var(--link-color-dark);
+    --button--color: var(--secondary-color);
+
+    .card-pf {
+      background: #004c40 !important;
+      color: var(--text-color-dark) !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: var(--text-color-dark);
+    }
+  }
+
+  &.light-theme {
+    background-color: var(--background-color-light) !important;
+    color: var(--text-color-light) !important;
+    --pf-c-form-control--BackgroundColor: var(
+      --input-background-light
+    ) !important;
+    --pf-c-form-control--BorderBottomColor: var(
+      --input-border-color
+    ) !important;
+    --pf-c-form-control--Color: var(--text-color-light) !important;
+    --link--color: var(--link-color-light);
+    --button--color: var(--background-color-light);
+
+    .card-pf {
+      background: #fff !important;
+      color: var(--text-color-light) !important;
+    }
+  }
+}
 
 div.kc-logo-text {
-    display: none;
+  display: none;
 }
 
 #kc-registration-container {
-    margin-top: -10px;
-    margin-bottom: 20px; /* Add spacing below the registration container */
+  margin-top: -10px;
+  margin-bottom: 20px;
 }
-
-.black-theme input.pf-c-form-control {
-    background-color: #00685E !important;
-    color: white !important;
-}
-
-.light-theme input.pf-c-form-control {
-    background-color: white !important;
-    color: black !important;
-}
-body {
-    background-color: transparent !important;
-}
-
-body.black-theme {
-    background-color: #121212 !important;
-    color: white !important;
-    background-image: none !important;
-    background-image: url("../img/dark-bg.png") !important;
-    --pf-c-form-control--BackgroundColor: #00685E !important;
-    --pf-c-form-control--BorderBottomColor: #00887E !important; /* Ensures contrast */
-    --pf-c-form-control--Color: white !important; /* Text color for readabili */
-    --pf-global--primary-color--100: #00A59E;
-    --link--color: #ffffff;
-    --button--color: #2C5350;
-
-}
-
-body.light-theme {
-    background-color: white !important;
-    color: black !important;
-    --pf-c-form-control--BackgroundColor: white !important;
-    --pf-c-form-control--BorderBottomColor: #00887E !important; /* Keeps the same border */
-    --pf-c-form-control--BorderRightColor: #00887E !important; /* Keeps the same border */
-    --pf-c-form-control--Color: black !important;
-    --pf-global--primary-color--100: #00887E;
-    --link--color: #00887E;
-    --button--color: #ffffff;
-
-}
-body.black-theme .card-pf {
-    background: #004C40 !important; /* Darker background for dark mode */
-    color: white !important;
-    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.175); /* Light shadow for contrast */
-}
-
-body.light-theme .card-pf {
-    background: #fff !important; /* Keep the default light mode background */
-    color: black !important;
-}
-
 
 .custom-top-right-button {
-    position: fixed;
-    top: 10px;
-    right: 10px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
 }
-
 
 .forgot-password-container {
-    text-align: center; /* Center the link */
-    margin-top: 15px; /* Optional: add space above */
-}
+  text-align: center;
+  margin-top: 15px;
 
-.forgot-password-container a {
-    color: var(--link--color); /* Green color */
-    text-decoration: underline; /* Remove underline */
-}
-
-.forgot-password-container a:hover {
-    text-decoration: underline; /* Optional: underline on hover */
-    color: #003b37; /* Green color */
-}
-
-
-#kc-registration span a {
-    color: var(--link--color);  /* Set the link color */
+  a {
+    color: var(--link--color);
     text-decoration: underline;
-    margin-left: 8px;    /* Add space between the message and the link */
+    transition: color var(--transition-duration) ease;
+
+    &:hover {
+      color: #003b37;
+    }
+  }
 }
 
+#kc-registration span {
+  font-weight: var(--font-weight-normal);
 
-#kc-registration span a:hover {
-    color: #003e3a;  /* Set the link color */
+  a {
+    color: var(--link--color);
+    text-decoration: underline;
+    margin-left: 8px;
+    font-weight: var(--font-weight-bold);
+
+    &:hover {
+      color: #003e3a;
+    }
+  }
 }
 
-/* Hide the text but keep the space occupied by the header */
 #kc-header-wrapper {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 #rememberMe {
-    accent-color: #00887E; /* Set the checkbox to green */
+  accent-color: var(--input-border-color);
 }
 
-
-
-/* Remove the default blue outline when the checkbox is focused */
-
-/* Load font */
-@font-face {
-    font-family: 'Inter';
-    src: url('path/to/font.woff2') format('woff2'),
-         url('path/to/font.woff') format('woff');
-    font-style: normal;
-    font-weight: bold; /* Make the font bold globally */
-
+body.black-theme #kc-form-options .checkbox {
+  color: var(--text-color-dark) !important;
 }
 
-/* Apply globally */
-body {
-    font-family: 'Inter', sans-serif;
-    font-weight: 599; /* Apply semi-bold styling globally */
-
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-bold);
+  color: #08566b;
 }
 
-/* Apply to specific classes */
-.login-pf {
-    font-family: 'Inter', sans-serif;
-    font-weight: bold; /* Make the font bold globally */
-
+.pf-c-button {
+  font-family: var(--font-family);
+  --pf-c-button--m-primary--hover--BackgroundColor: #00504b;
+  --pf-c-form-control--hover--BorderBottomColor: unset;
+  transition: background-color var(--transition-duration) ease;
+  font-size: 12px;
+  background-color: var(--primary-color) !important;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter', sans-serif;
-    font-weight: bold; /* Make the font bold globally */
-    color: #08566B;
+.pf-c-form-control {
+  font-size: 12px;
+  --pf-c-form-control--hover--BorderBottomColor: unset;
+  --pf-c-form-control--focus--BorderBottomColor: unset;
+  --pf-c-form-control--focus--BorderColor: unset;
+  --pf-c-form-control--focus--BoxShadow: none;
+  border: 1px solid var(--input-border-color) !important;
+  outline: none;
+  padding-bottom: 5px !important;
+  font-weight: var(--font-weight-normal);
 
+  transition: border-color var(--transition-duration) ease,
+    background-color var(--transition-duration) ease;
+
+  &::placeholder {
+    color: #919daf;
+    font-weight: var(--font-weight-normal);
+  }
+
+  &:focus {
+    outline: none;
+  }
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter', sans-serif;
-    font-weight: bold;
-    color: #08566B; /* Default color for light mode */
+.black-theme .pf-c-form-control {
+  color: var(--text-color-dark);
+
+  &:hover {
+    border: 1px solid var(--primary-color);
+  }
+  &:focus {
+    border: 1px solid var(--primary-color) !important;
+    background-color: var(--input-background-dark) !important;
+  }
 }
 
-/* Dark mode styling */
-body.black-theme h1, 
-body.black-theme h2, 
-body.black-theme h3, 
-body.black-theme h4, 
-body.black-theme h5, 
-body.black-theme h6 {
-    color: white; /* Change text color to white in dark mode */
+.light-theme .pf-c-form-control {
+  background-color: var(--input-background-light);
+  color: var(--text-color-light);
+
+  &:hover {
+    border: 1px solid var(--primary-color);
+  }
+  &:focus {
+    border: 1px solid var(--primary-color) !important;
+    background-color: #f9f9f9 !important;
+  }
 }
 
-
-
-
-.pf-c-button, .pf-c-form-control {
-    font-family: 'Inner', sans-serif;
-    --pf-c-button--m-primary--hover--BackgroundColor: #00504b; /* Change the hover color */
-    --pf-c-form-control--hover--BorderBottomColor: unset;
-    
-    
+a {
+  transition: all 0.15s ease;
 }
 
+.login-pf-signup {
+  display: none;
+}
+
+.light-theme a {
+  color: #29887e !important;
+
+  &:hover,
+  &:focus {
+    color: #14504b !important;
+  }
+}
+
+.black-theme a {
+  color: #fff !important;
+
+  &:hover,
+  &:focus {
+    color: #ccc !important;
+  }
+}
+
+.pf-c-form__label-text {
+  &.black-theme {
+    color: #08566b;
+  }
+
+  &.light-theme {
+    color: #08566b;
+  }
+}
 
 .btn-primary {
-    background-color: unset;
-    background-image: unset;
-    border-color: var(--button--color);
-    color: unset;
-}
+  background-color: unset;
+  background-image: unset;
+  border: none;
+  color: unset;
 
-.btn-primary.active, 
-.btn-primary:active, 
-.btn-primary:focus {
+  &:hover {
+    background-color: unset;
+    border-color: var(--button--color);
+  }
+
+  &.active,
+  &:active,
+  &:focus {
     background-color: inherit !important;
     color: inherit !important;
-    border-color: var(--button--color);
+    border: none;
     box-shadow: none !important;
     outline: none !important;
+  }
 }
 
+.col-md-10 {
+  padding: 0 !important;
+}
 
-.login-pf a:hover {
-    color: var(--button--color);
+.pf-m-primary {
+  transition: all 0.15s ease !important;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: #00685e !important;
+  }
 }
 
 .btn {
-    box-shadow: unset;
+  box-shadow: unset;
 }
 
-
-.btn-primary.active, .btn-primary:active, .btn-primary:focus, .btn-primary:hover, .open .dropdown-toggle.btn-primary {
-    background-color: unset;
-    border-color: var(--button--color);
-}
-
-.btn-primary:hover {
-    background-color: unset;
-    border-color: var(--button--color);
+.open .dropdown-toggle.btn-primary {
+  background-color: unset;
+  border-color: var(--button--color);
 }
 
 .kc-social-links li {
-    font-family: 'Inner', sans-serif;
-    font-weight: bold; /* Make the font bold globally */
-
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-bold);
 }
 
 #kc-info-wrapper {
-    font-size: 13px;
-    padding: 15px 35px;
-    background-color: transparent;
-    border-radius: 25px;
-    
+  font-size: 13px;
+  padding: 15px 35px;
+  background-color: transparent;
+  border-radius: 25px;
 }
-
-
-
 
 .card-pf {
-    margin: 0 auto;
-    box-shadow: var(--pf-global--BoxShadow--lg);
-    padding: 0 20px;
-    max-width: 500px;
-    border-top: none;
-    border-color: var(--pf-global--primary-color--100);
-    border-radius: 25px;
-}
-#kc-form, .pf-c-form-control, .pf-c-button {
-    border-radius: 45px; /* Rounded corners */
+  margin: 0 auto;
+  box-shadow: none;
+  padding: 60px !important;
+  max-width: 500px;
+  border-top: none;
+  border-radius: 25px !important;
 }
 
+#kc-form,
+.pf-c-form-control,
+.pf-c-button {
+  border-radius: 45px;
+}
 
-
-
-
-
-/* Ensure the h1 element aligns to the left */
 #kc-page-title {
-    text-align: left;  /* Aligns text inside the h1 to the left */
-         /* Remove default margin to avoid unnecessary space */
+  text-align: left;
+  margin: 0 !important;
 }
 
-/* Hide the password visibility button */
 button[data-password-toggle] {
-    display: none;
+  display: none;
 }
 
-
-
-
-/* Custom styles for First Name and Last Name fields */
-/* Container for firstName and lastName */
-
-
-.pf-c-accordion, 
-.pf-c-alert, 
-.pf-c-banner.pf-m-blue, 
-.pf-c-banner.pf-m-gold, 
-.pf-c-banner.pf-m-info, 
-.pf-c-banner.pf-m-warning, 
-.pf-c-calendar-month, 
-.pf-c-chip, 
-.pf-c-chip-group, 
-.pf-c-context-selector__menu, 
-.pf-c-data-list, 
-.pf-c-form-control, 
-.pf-c-input-group, 
-.pf-c-masthead.pf-m-light, 
-.pf-c-masthead.pf-m-light-200, 
-.pf-c-menu, 
-.pf-c-page__sidebar.pf-m-light, 
-.pf-c-select, 
-.pf-c-table, 
+.pf-c-accordion,
+.pf-c-alert,
+.pf-c-banner.pf-m-blue,
+.pf-c-banner.pf-m-gold,
+.pf-c-banner.pf-m-info,
+.pf-c-banner.pf-m-warning,
+.pf-c-calendar-month,
+.pf-c-chip,
+.pf-c-chip-group,
+.pf-c-context-selector__menu,
+.pf-c-data-list,
+.pf-c-form-control,
+.pf-c-input-group,
+.pf-c-masthead.pf-m-light,
+.pf-c-masthead.pf-m-light-200,
+.pf-c-menu,
+.pf-c-page__sidebar.pf-m-light,
+.pf-c-select,
+.pf-c-table,
 .pf-t-light {
-    --pf-global--BackgroundColor--100: transparent !important;
+  --pf-global--BackgroundColor--100: transparent !important;
 }
 
-:root {
-    --pf-global--BorderColor--300: #00887E !important;
+.login-pf-header {
+  margin: 0 !important;
 }
