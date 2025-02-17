@@ -38,13 +38,12 @@
 	
         <#-- Check for First Name or Last Name field and wrap them in a container -->
         <#if attribute.name == "firstName" || attribute.name == "lastName">
-            <div class="name-container">
+            <div class="name-container" style="margin-bottom: 15px !important;">
         </#if>
 
 		<div class="${properties.kcFormGroupClass!}">
 			<div class="${properties.kcLabelWrapperClass!}">
 				<label for="${attribute.name}" class="${properties.kcLabelClass!}">${advancedMsg(attribute.displayName!'')}</label>
-				<#if attribute.required>*</#if>
 			</div>
 			<div class="${properties.kcInputWrapperClass!}">
 				<#if attribute.annotations.inputHelperTextBefore??>
@@ -104,7 +103,15 @@
 		aria-invalid="<#if messagesPerField.existsError('${attribute.name}')>true</#if>"
 		<#if attribute.readOnly>disabled</#if>
 		<#if attribute.autocomplete??>autocomplete="${attribute.autocomplete}"</#if>
-		<#if attribute.annotations.inputTypePlaceholder??>placeholder="${advancedMsg(attribute.annotations.inputTypePlaceholder)}"</#if>
+		<#if attribute.name == "firstName">
+			placeholder="Enter your first name"
+		<#elseif attribute.name == "lastName">
+			placeholder="Enter your last name"
+		<#elseif attribute.name == "email">
+			placeholder="Enter your email address"
+		<#elseif attribute.annotations.inputTypePlaceholder??>
+			placeholder="${advancedMsg(attribute.annotations.inputTypePlaceholder)}"
+		</#if>
 		<#if attribute.annotations.inputTypePattern??>pattern="${attribute.annotations.inputTypePattern}"</#if>
 		<#if attribute.annotations.inputTypeSize??>size="${attribute.annotations.inputTypeSize}"</#if>
 		<#if attribute.annotations.inputTypeMaxlength??>maxlength="${attribute.annotations.inputTypeMaxlength}"</#if>

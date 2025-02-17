@@ -1,7 +1,7 @@
 <#import "template.ftl" as layout>
 <#import "user-profile-commons.ftl" as userProfileCommons>
 <#import "register-commons.ftl" as registerCommons>
-<@layout.registrationLayout displayMessage=messagesPerField.exists('global') displayRequiredFields=true; section>
+<@layout.registrationLayout displayMessage=messagesPerField.exists('global') displayRequiredFields=false; section>
     <#if section = "header">
         <#if messageHeader??>
             ${kcSanitize(msg("${messageHeader}"))?no_esc}
@@ -12,12 +12,16 @@
         <form id="kc-register-form" class="${properties.kcFormClass!}" action="${url.registrationAction}" method="post">
 
             <@userProfileCommons.userProfileFormFields; callback, attribute>
-                <#if callback = "afterField">
+                <#--  <#if callback = "afterField">  -->
                 <#-- render password fields just under the username or email (if used as username) -->
-                    <#if passwordRequired?? && (attribute.name == 'username' || (attribute.name == 'email' && realm.registrationEmailAsUsername))>
-                        <div class="${properties.kcFormGroupClass!}">
+                    <#--  <#if passwordRequired?? && (attribute.name == 'username' || (attribute.name == 'email' && realm.registrationEmailAsUsername))>  -->
+                    <#--  </#if>  -->
+                <#--  </#if>  -->
+            </@userProfileCommons.userProfileFormFields>
+
+                                    <div class="${properties.kcFormGroupClass!}">
                             <div class="${properties.kcLabelWrapperClass!}">
-                                <label for="password" class="${properties.kcLabelClass!}">${msg("password")}</label> *
+                                <label for="password" class="${properties.kcLabelClass!}">${msg("password")}</label>
                             </div>
                             <div class="${properties.kcInputWrapperClass!}">
                                 <div class="${properties.kcInputGroup!}">
@@ -48,7 +52,7 @@
                         <div class="${properties.kcFormGroupClass!}">
                             <div class="${properties.kcLabelWrapperClass!}">
                                 <label for="password-confirm"
-                                       class="${properties.kcLabelClass!}">${msg("passwordConfirm")}</label> *
+                                       class="${properties.kcLabelClass!}">${msg("passwordConfirm")}</label>
                             </div>
                             <div class="${properties.kcInputWrapperClass!}">
                                 <div class="${properties.kcInputGroup!}">
@@ -72,9 +76,7 @@
                                 </#if>
                             </div>
                         </div>
-                    </#if>
-                </#if>
-            </@userProfileCommons.userProfileFormFields>
+
 
             <@registerCommons.termsAcceptance/>
 
