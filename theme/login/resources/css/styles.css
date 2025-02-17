@@ -23,7 +23,8 @@ body {
   background-color: transparent !important;
   font-family: var(--font-family);
   font-weight: 599;
-  transition: var(--transition-duration) ease;
+  transition: background-color var(--transition-duration) ease;
+  position: relative;
 
   &.black-theme {
     background-color: var(--background-color-dark) !important;
@@ -72,6 +73,32 @@ body {
       color: var(--text-color-light) !important;
     }
   }
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 196px;
+  height: 50px; /* Adjust height as needed */
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: contain;
+  z-index: 1;
+}
+
+body.light-theme::before {
+  background-image: url("../img/banner/light.png") !important;
+}
+
+body.black-theme::before {
+  background-image: url("../img/banner.dark.png") !important;
+}
+
+/* Add padding to the top of the card to accommodate the banner */
+.card-pf {
+  margin-top: 80px !important; /* Adjust based on banner height */
 }
 
 div.kc-logo-text {
